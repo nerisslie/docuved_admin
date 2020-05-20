@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout
+        android:id="@+id/frame1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:background="#322F2F"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Hapus Data"
+            android:textSize="22sp"
+            android:textColor="#FFFFFF"/>
+    </FrameLayout>
+
+    <Space
+        android:id="@+id/space"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/frame1"/>
+
+    <FrameLayout
+        android:id="@+id/frame3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/space">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:background="#322F2F"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/check"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:background="@drawable/x"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="100dp"/>
+            <TextView
+                android:id="@+id/berhasil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Apakah Anda yakin untuk"
+                android:textColor="#FFFFFF"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/check"
+                android:layout_marginTop="30dp"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/hapus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="menghapus data?"
+                android:textColor="#FFFFFF"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/berhasil"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/button1"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/berhasil"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/roundedbutton4"
+                android:shadowRadius="0"
+                android:layout_marginTop="50dp"
+                android:text="YA"
+                android:textColor="#FF9800"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/button2"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/button1"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/roundedbutton"
+                android:shadowRadius="0"
+                android:layout_marginTop="20dp"
+                android:text="TIDAK"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="#322F2F"
+        app:itemIconTint="@drawable/state"
+        app:menu="@menu/bottomnav" />
+</RelativeLayout>

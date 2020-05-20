@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:id="@+id/frame1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:background="#322F2F"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Tambah Siswa"
+            android:textSize="22sp"
+            android:textColor="#FFFFFF"/>
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_below="@id/frame1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="60dp"
+            android:background="#322F2F"/>
+
+        <ImageView
+            android:id="@+id/foto"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:background="@color/ic_person_background"
+            android:foreground="@drawable/ic_person_foreground"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="35dp"/>
+
+        <Space
+            android:id="@+id/space"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_below="@id/foto"/>
+
+        <EditText
+            android:id="@+id/nisn"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/space"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/roundedbutton3"
+            android:hint="Nomor Induk Siswa Nasional"
+            android:inputType="number"
+            android:paddingLeft="20dp" />
+
+        <EditText
+            android:id="@+id/nama"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/nisn"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/roundedbutton3"
+            android:hint="Nama Siswa"
+            android:inputType="text"
+            android:paddingLeft="20dp"
+            android:layout_marginTop="20dp"/>
+
+        <Spinner
+            android:id="@+id/tahun"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/nama"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/roundedbutton3"
+            android:inputType="number"
+            android:paddingLeft="15dp"
+            android:layout_marginTop="20dp"/>
+
+        <Spinner
+            android:id="@+id/jurusan"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/tahun"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/roundedbutton3"
+            android:inputType="text"
+            android:paddingLeft="15dp"
+            android:layout_marginTop="20dp"/>
+
+
+        <Button
+            android:id="@+id/button1"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/jurusan"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/roundedbutton"
+            android:shadowRadius="0"
+            android:paddingLeft="60dp"
+            android:drawableLeft="@drawable/ic_save_black_24dp"
+            android:text="SIMPAN DATA"
+            android:gravity=""
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:layout_marginTop="100dp"/>
+
+        <Space
+            android:layout_below="@id/button1"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"/>
+
+
+
+    </RelativeLayout>
+
+
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="#322F2F"
+        app:itemIconTint="@drawable/state"
+        app:menu="@menu/bottomnav" />
+
+</RelativeLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TwoColored">
+        <attr name="android:startColor" format="color"/>
+        <attr name="android:endColor" format="color"/>
+    </declare-styleable>
+</resources>

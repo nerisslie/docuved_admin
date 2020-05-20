@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/loginbg">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Space
+                android:id="@+id/space1"
+                android:layout_width="match_parent"
+                android:layout_height="280dp" />
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/space1"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/roundedbutton3"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="20dp" />
+
+            <Space
+                android:id="@+id/space2"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_below="@id/email" />
+
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/space2"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/roundedbutton3"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:paddingLeft="20dp" />
+
+            <TextView
+                android:id="@+id/klik"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/password"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="13dp"
+                android:paddingLeft="100dp"
+                android:text="Klik di sini."
+                android:textStyle="bold"
+                android:textColor="#322F2F"
+                android:clickable="true"
+                android:textSize="17sp"/>
+
+            <Space
+                android:id="@+id/space3"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@id/klik" />
+
+            <Button
+                android:id="@+id/button1"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/space3"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/roundedbutton"
+                android:shadowRadius="0"
+                android:text="MASUK"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/button2"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/button1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/roundedbutton2"
+                android:shadowRadius="0"
+                android:text="DAFTAR SEBAGAI SISWA"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

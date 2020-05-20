@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="80dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginRight="30dp"
+                android:background="#322F2F"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/foto"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:src="#565656"
+                android:foreground="@drawable/ic_person_white_24dp"
+
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"/>
+
+            <Space
+                android:id="@+id/space4"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@id/foto"/>
+
+            <ImageView
+                android:id="@+id/person"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_person_white_24dp"
+                android:layout_below="@id/space4"
+                android:layout_marginStart="120dp"/>
+
+            <TextView
+                android:id="@+id/nama"
+                android:layout_width="match_parent"
+                android:layout_marginEnd="50dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/space4"
+                android:text="Nama"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:layout_marginStart="160dp"/>
+
+            <Space
+                android:id="@+id/space5"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_below="@id/nama"/>
+
+            <ImageView
+                android:id="@+id/card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_chrome_reader_mode_white_24dp"
+                android:layout_below="@id/space5"
+                android:layout_marginStart="120dp"/>
+
+            <TextView
+                android:id="@+id/nisn"
+                android:layout_width="match_parent"
+                android:layout_marginEnd="50dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/space5"
+                android:text="NISN"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:layout_marginStart="160dp"/>
+
+            <Space
+                android:id="@+id/space6"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_below="@id/nisn"/>
+
+            <ImageView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_date_range_white_24dp"
+                android:layout_below="@id/space6"
+                android:layout_marginStart="120dp"/>
+
+            <TextView
+                android:id="@+id/taun"
+                android:layout_width="match_parent"
+                android:layout_marginEnd="50dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/space6"
+                android:text="Tahun"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:layout_marginStart="160dp"/>
+
+            <Space
+                android:id="@+id/space7"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_below="@id/taun"/>
+
+            <ImageView
+                android:id="@+id/bookmark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_bookmark_white_24dp"
+                android:layout_below="@id/space7"
+                android:layout_marginStart="120dp"/>
+
+            <TextView
+                android:id="@+id/jurusan"
+                android:layout_width="match_parent"
+                android:layout_marginEnd="50dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/space7"
+                android:text="Jurusan"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:layout_marginStart="160dp"/>
+
+            <Button
+                android:id="@+id/button1"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/jurusan"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/roundedbutton"
+                android:shadowRadius="0"
+                android:paddingLeft="40dp"
+                android:drawableLeft="@drawable/ic_edit_white_24dp"
+                android:text="SIMPAN DATA"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:gravity=""
+                android:layout_marginTop="10dp"/>
+
+            <FrameLayout
+                android:id="@+id/frame2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image1"
+                android:layout_marginTop="10dp">
+                <ImageView
+                    android:background="#FF9800"
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_height="30dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Daftar Berkas"
+                    android:textSize="18sp"
+                    android:textColor="#000000"/>
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/frame3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/frame2"
+                android:layout_marginTop="10dp">
+                <ImageView
+                    android:background="#322F2F"
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_height="match_parent"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/raporganjil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Rapor Semester Ganjil"
+                    android:textSize="18sp"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="60dp"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_create_white_24dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="80dp"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_delete_forever_white_24dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="45dp"/>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="#FFFFFF"
+                        android:layout_below="@id/raporganjil"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="45dp"/>
+                </RelativeLayout>
+            </FrameLayout>
+        </RelativeLayout>
+
+
+
+    </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/frame1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:background="#322F2F"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Detail Siswa"
+            android:textSize="22sp"
+            android:textColor="#FFFFFF"/>
+    </FrameLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="#322F2F"
+        app:itemIconTint="@drawable/state"
+        app:menu="@menu/bottomnav" />
+</RelativeLayout>
