@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">XML Desain</string>
+    <string name="app_name">Docuved</string>
     <string-array name="tahun">
         <item>Tahun Angkatan</item>
     </string-array>
