@@ -51,7 +51,6 @@
         android:layout_alignParentBottom="true"
         android:background="#322F2F"
         app:elevation="0dp"
-        app:itemIconTint="@drawable/state"
         app:menu="@menu/bottomnav" />
 
 </RelativeLayout>

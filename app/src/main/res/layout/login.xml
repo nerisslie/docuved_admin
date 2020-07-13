@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/loginbg">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/loginbg">
+        android:layout_height="match_parent">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -52,14 +52,15 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/password"
                 android:layout_centerHorizontal="true"
-                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
                 android:layout_marginTop="13dp"
-                android:paddingLeft="100dp"
+                android:paddingStart="100dp"
                 android:text="Klik di sini."
                 android:textStyle="bold"
                 android:textColor="#322F2F"
                 android:clickable="true"
-                android:textSize="17sp"/>
+                android:textSize="17sp"
+                android:focusable="true" />
 
             <Space
                 android:id="@+id/space3"
@@ -77,6 +78,7 @@
                 android:background="@drawable/roundedbutton"
                 android:shadowRadius="0"
                 android:text="MASUK"
+                android:textStyle="bold"
                 android:textColor="#000000"
                 android:textSize="16sp" />
 
@@ -88,10 +90,11 @@
                 android:layout_below="@id/button1"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/roundedbutton2"
+                android:background="@drawable/roundedbutton4"
                 android:shadowRadius="0"
-                android:text="DAFTAR SEBAGAI SISWA"
-                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:text="BUKU PANDUAN"
+                android:textColor="#FB8C00"
                 android:textSize="16sp" />
 
 

@@ -52,14 +52,16 @@
             android:textColor="#FF9800"
             android:layout_marginStart="40dp"
             android:layout_marginTop="10dp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:layout_marginLeft="40dp" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Tahun 2019/2020"
             android:textColor="#FF9800"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="40dp" />
 
             <com.anychart.AnyChartView
                 android:id="@+id/chart_view"
@@ -88,13 +90,15 @@
                     android:text="4,708"
                     android:textColor="#FF9800"
                     android:layout_marginStart="40dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:layout_marginLeft="40dp" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Berkas Telah Diunggah"
                         android:textColor="#FF9800"
-                        android:layout_marginStart="40dp"/>
+                        android:layout_marginStart="40dp"
+                        android:layout_marginLeft="40dp" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -106,13 +110,15 @@
                         android:text="232"
                         android:textColor="#FF9800"
                         android:layout_marginStart="40dp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold"
+                        android:layout_marginLeft="40dp" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Siswa Telah Terdaftar"
                         android:textColor="#FF9800"
-                        android:layout_marginStart="40dp"/>
+                        android:layout_marginStart="40dp"
+                        android:layout_marginLeft="40dp" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -129,7 +135,6 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="#322F2F"
-        app:itemIconTint="@drawable/state"
         android:layout_alignParentBottom="true"
         app:menu="@menu/bottomnav" />
 </RelativeLayout>
