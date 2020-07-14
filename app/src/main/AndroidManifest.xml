@@ -20,7 +20,7 @@
         <activity android:name=".ui.activity.DaftarSiswa"/>
         <activity android:name=".ui.activity.DashboardAdmin"/>
         <activity android:name=".ui.activity.DashboardSiswa"/>
-        <activity android:name=".ui.activity.Login"
+        <activity android:name=".ui.activity.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".ui.activity.Profil"/>
 

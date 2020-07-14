@@ -16,7 +16,7 @@ class SplashScreen : AppCompatActivity() {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
         val handler = Handler()
         handler.postDelayed({
-            startActivity(Intent(applicationContext, Login::class.java))
+            startActivity(Intent(applicationContext, LoginActivity::class.java))
             finish()
         }, 3000L)
     }
