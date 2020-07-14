@@ -1,4 +1,9 @@
 <resources>
+
+    <!-- Default Text -->
+    <string name="forgot_password">Lupa kata sandi ? Klik di sini.</string>
+    <string name="copyright">Copyright 2020 \u00A9 Nerissa Arviany</string>
+
     <string name="app_name">Docuved</string>
     <string-array name="tahun">
         <item>Tahun Angkatan</item>
