@@ -8,7 +8,7 @@ import com.siren.docuved.R
 import java.util.*
 
 
-class DashboardAdmin : AppCompatActivity(), View.OnClickListener {
+class Dashboard : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dashboard_admin)

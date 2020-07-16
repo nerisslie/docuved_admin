@@ -17,7 +17,7 @@ class DaftarSiswa : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View) {
         if (v.id == R.id.button1) {
-            val intent = Intent(this, DashboardAdmin::class.java)
+            val intent = Intent(this, Dashboard::class.java)
             startActivity(intent)
         }
     }
