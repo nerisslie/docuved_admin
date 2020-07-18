@@ -7,14 +7,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.siren.docuved_admin.R
 
-class HistoryFragment : Fragment() {
+class ExploreFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val root = inflater.inflate(R.layout.fragment_history, container, false)
+        val root = inflater.inflate(R.layout.fragment_explore, container, false)
         return root
     }
 }

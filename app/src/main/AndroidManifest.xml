@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.siren.docuved">
+    package="com.siren.docuved_admin" >
 
     <application
         android:allowBackup="true"
@@ -8,22 +8,25 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.AppBarOverlay">
-        <activity android:name=".ui.activity.SplashScreen"
-            android:theme="@style/AppTheme.NoActionBar">
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.siren.docuved_admin.ui.activity.DashboardAdmin"
+            android:label="@string/title_activity_dashboard_siswa"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.siren.docuved_admin.ui.activity.SplashScreen"
+            android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.DaftarSiswa"/>
-        <activity android:name=".ui.activity.DashboardAdmin"/>
-        <activity android:name=".ui.activity.DashboardSiswa"/>
-        <activity android:name=".ui.activity.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".ui.activity.Profil"/>
-
+        <activity android:name="com.siren.docuved_admin.ui.activity.DaftarSiswa" />
+        <activity android:name="com.siren.docuved_admin.ui.activity.Dashboard" />
+        <activity
+            android:name="com.siren.docuved_admin.ui.activity.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

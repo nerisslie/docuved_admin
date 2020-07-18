@@ -1,4 +1,4 @@
-package com.siren.docuved.base
+package com.siren.docuved_admin.base
 
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.FirebaseFirestore

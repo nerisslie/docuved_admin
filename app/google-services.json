@@ -34,6 +34,35 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1022889515273:android:32a4ad8b5f6f7f9b8a9bd8",
+        "android_client_info": {
+          "package_name": "com.siren.docuved_admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1022889515273-2e45cf3qf3ate9r02avpb3ubn2brjusg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFtoDlJGte_0IbNS-eAF0qlJR6ToeXdbU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1022889515273-2e45cf3qf3ate9r02avpb3ubn2brjusg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"

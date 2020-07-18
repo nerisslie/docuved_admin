@@ -9,7 +9,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.siren.docuved_admin.R
 
-class DashboardSiswa : AppCompatActivity() {
+class DashboardAdmin : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +21,7 @@ class DashboardSiswa : AppCompatActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_dashboard, R.id.navigation_history, R.id.navigation_profile
+                R.id.navigation_dashboard, R.id.navigation_explore, R.id.navigation_add, R.id.navigation_file, R.id.navigation_profile
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

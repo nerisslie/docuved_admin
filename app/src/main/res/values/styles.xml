@@ -3,9 +3,9 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/ic_person_background</item>
-        <item name="colorPrimaryDark">@color/ic_person_background</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">#323232</item>
+        <item name="colorPrimaryDark">#707070</item>
+        <item name="colorAccent">#FEA104</item>
     </style>
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
@@ -21,5 +21,13 @@
         <item name="colorPrimary">#fff</item>
         <item name="colorPrimaryDark">#fff</item>
         <item name="colorAccent">#fff</item>
+    </style>
+
+    <style name="spinnerItemStyle" parent="android:Widget.TextView.SpinnerItem">
+
+    </style>
+
+    <style name="spinnerDropDownItemStyle" parent="android:TextAppearance.Widget.TextView.SpinnerItem">
+
     </style>
 </resources>

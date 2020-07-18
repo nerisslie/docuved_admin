@@ -1,9 +1,9 @@
-package com.siren.docuved.ui.activity
+package com.siren.docuved_admin.ui.activity
 
 import android.os.Bundle
 import android.util.Log
-import com.siren.docuved.R
-import com.siren.docuved.base.BaseActivity
+import com.siren.docuved_admin.R
+import com.siren.docuved_admin.base.BaseActivity
 
 class MainActivity : BaseActivity() {
 

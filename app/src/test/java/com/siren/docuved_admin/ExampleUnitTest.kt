@@ -1,4 +1,4 @@
-package com.siren.docuved
+package com.siren.docuved_admin
 
 import org.junit.Test
 

@@ -87,11 +87,4 @@
                 android:textSize="16sp" />
         </RelativeLayout>
     </FrameLayout>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        android:background="#322F2F"
-        app:menu="@menu/bottomnav" />
 </RelativeLayout>

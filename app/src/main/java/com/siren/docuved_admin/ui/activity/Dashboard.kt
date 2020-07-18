@@ -1,10 +1,10 @@
-package com.siren.docuved.ui.activity
+package com.siren.docuved_admin.ui.activity
 
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.anychart.anychart.*
-import com.siren.docuved.R
+import com.siren.docuved_admin.R
 import java.util.*
 
 

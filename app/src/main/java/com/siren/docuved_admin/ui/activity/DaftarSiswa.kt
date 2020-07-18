@@ -1,11 +1,11 @@
-package com.siren.docuved.ui.activity
+package com.siren.docuved_admin.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.siren.docuved.R
+import com.siren.docuved_admin.R
 
 class DaftarSiswa : AppCompatActivity(), View.OnClickListener {
     protected fun OnCreate(savedInstanceState: Bundle?) {

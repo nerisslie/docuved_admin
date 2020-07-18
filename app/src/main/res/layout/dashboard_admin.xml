@@ -129,13 +129,5 @@
         </ScrollView>
     </LinearLayout>
 
-
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="#322F2F"
-        android:layout_alignParentBottom="true"
-        app:menu="@menu/bottomnav" />
 </RelativeLayout>
 
