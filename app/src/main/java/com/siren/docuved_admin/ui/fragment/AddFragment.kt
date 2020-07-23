@@ -49,12 +49,12 @@ class AddFragment : Fragment() {
         super.onAttach(context)
         spinnerAdapter = ArrayAdapter(
             context,
-            R.layout.spinner,
+            R.layout.default_spinner,
             tahun
         )
         spinnerJurusanAdapter = ArrayAdapter(
             context,
-            R.layout.spinner,
+            R.layout.default_spinner,
             jurusan
         )
     }

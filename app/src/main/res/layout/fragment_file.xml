@@ -1,124 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragment.FileFragment" >
 
-    <FrameLayout
-        android:id="@+id/frame2"
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="30dp">
-        <ImageView
+        android:layout_marginTop="10dp"
+        android:padding="20dp"
+        android:orientation="vertical"
+        android:background="@color/colorMainBackground"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/nisn"
             android:layout_width="match_parent"
-            android:layout_height="500dp"
-            android:background="#322F2F"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"/>
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:background="@drawable/roundedbutton3"
+            android:hint="Nomor Induk Siswa Nasional"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/noberkas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:padding="15dp"
+            android:background="@drawable/roundedbutton3"
+            android:hint="No. Berkas"
+            android:inputType="textEmailAddress" />
+
+        <Spinner
+            android:id="@+id/jenisberkas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:padding="15dp"
+            android:background="@drawable/roundedbutton3" />
+
+        <Spinner
+            android:id="@+id/kelas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:padding="15dp"
+            android:background="@drawable/roundedbutton3"/>
+
+        <EditText
+            android:id="@+id/keterangan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:padding="15dp"
+            android:background="@drawable/roundedbutton3"
+            android:hint="Keterangan"
+            android:inputType="textEmailAddress" />
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/nisn"
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/roundedbutton3"
-                android:hint="Nomor Induk Siswa Nasional"
-                android:inputType="number"
-                android:paddingLeft="20dp" />
-            <EditText
-                android:id="@+id/noberkas"
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:layout_below="@id/nisn"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/roundedbutton3"
-                android:hint="No. Berkas"
-                android:inputType="textEmailAddress"
-                android:paddingLeft="20dp"
-                android:layout_marginTop="20dp"/>
-
-            <Spinner
-                android:id="@+id/jenisberkas"
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:layout_below="@id/noberkas"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/roundedbutton3"
-                android:inputType="number"
-                android:paddingLeft="15dp"
-                android:layout_marginTop="20dp"/>
-
-            <Spinner
-                android:id="@+id/kelas"
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:layout_below="@id/jenisberkas"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/roundedbutton3"
-                android:inputType="text"
-                android:paddingLeft="15dp"
-                android:layout_marginTop="20dp"/>
-
-            <EditText
-                android:id="@+id/keterangan"
-                android:layout_width="300dp"
-                android:layout_height="100dp"
-                android:layout_below="@id/kelas"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/roundedbutton3"
-                android:hint="Keterangan"
-                android:inputType="textEmailAddress"
-                android:paddingLeft="20dp"
-                android:textAlignment="viewStart"
-                android:paddingTop="10dp"
-                android:gravity="top"
-                android:layout_marginTop="20dp"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp">
 
             <TextView
                 android:id="@+id/unggahberkas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:clickable="true"
-                android:text="Unggah Berkas.."
-                android:textColor="#FFFFFF"
-                android:layout_marginTop="10dp"
+                android:layout_gravity="start"
+                android:gravity="bottom"
+                android:padding="10dp"
+                android:drawablePadding="10dp"
                 android:drawableStart="@drawable/ic_insert_drive_file_white_24dp"
-                android:layout_below="@id/keterangan"
-                android:layout_marginStart="70dp"
-                android:textSize="14sp" />
-
-
-            <Space
-                android:id="@+id/spacedaftar"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_below="@id/unggahberkas"/>
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:text="Unggah Berkas.."/>
 
             <Button
-                android:id="@+id/button1"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:layout_below="@id/spacedaftar"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/roundedbutton"
-                android:shadowRadius="0"
-                android:text="UNGGAH"
-                android:textStyle="bold"
-                android:textColor="#000000"
-                android:textSize="16sp" />
+                android:id="@+id/btn_upload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:padding="10dp"
+                android:background="@color/design_default_color_background"
+                android:textSize="12sp"
+                android:text="Upload"
+                style="@style/Widget.AppCompat.Button.Small"/>
 
         </RelativeLayout>
 
-    </FrameLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/roundedbutton"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:text="UNGGAH"
+            style="@style/Widget.AppCompat.Button.Borderless"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</ScrollView>

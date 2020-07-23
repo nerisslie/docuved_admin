@@ -3,63 +3,112 @@ package com.siren.docuved_admin.ui.activity
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.text.TextUtils
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
-import com.siren.docuved_admin.R
 import com.siren.docuved_admin.base.BaseActivity
+import com.siren.docuved_admin.R
+import com.siren.docuved_admin.model.UserResponse
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
 
 @SuppressLint("Registered")
 class LoginActivity : BaseActivity() {
 
-    private lateinit var mEmail: EditText
+    private lateinit var mUsername: EditText
     private lateinit var mPassword: EditText
 
-    private lateinit var txtForgotPassword: TextView
-
     private lateinit var btnLogin: Button
-    private lateinit var btnHelp: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        mEmail              = findViewById(R.id.email)
+        mUsername           = findViewById(R.id.username)
         mPassword           = findViewById(R.id.password)
         btnLogin            = findViewById(R.id.btn_login)
-        btnHelp             = findViewById(R.id. btn_help)
 
         btnLogin.setOnClickListener {
 
-            processLogin()
+            validateUser()
+        }
+    }
+
+    public override fun onStart() {
+        super.onStart()
+
+        if(user.getUserData() != null)
+            goToDashboard()
+    }
+
+    private fun validateUser(){
+
+        when{
+            isEmpty(mUsername)      ->  mUsername.error     = "Username is required"
+            isEmpty(mPassword)      ->  mPassword.error     = "Password is required"
+            client.isOnline()       ->  processLogin()
+            else                    ->  showMessage("Tidak ada koneksi internet")
         }
     }
 
     private fun processLogin(){
 
-        Intent(applicationContext, DashboardAdmin::class.java).run {
+        mProgressDialog.show()
+
+        if(client.isOnline()) {
+
+            firebaseRef.collection("admin")
+                .whereEqualTo("username", mUsername.text.toString())
+                .whereEqualTo("password", md5(mPassword.text.toString()))
+                .limit(1)
+                .get()
+                .addOnSuccessListener { documents ->
+
+                    if(documents != null && !documents.isEmpty){
+
+                        for(document in documents) {
+
+                            user.setUserData(
+                                UserResponse(
+                                    admin_id = document.id,
+                                    username = document.data["username"].toString()
+                                )
+                            )
+                        }
+
+                        goToDashboard()
+                    }else{
+
+                        showMessage("Invalid Username or Password")
+                    }
+                }
+                .addOnFailureListener { exception ->
+
+                    showMessage(exception.toString())
+                }
+                .addOnCompleteListener{
+
+                    mProgressDialog.dismiss()
+                }
+        }else
+            showMessage("No Internet Connection")
+    }
+
+    private fun goToDashboard(){
+
+        showMessage("Success Login")
+
+        Intent(applicationContext, DashboardActivity::class.java).run {
             startActivity(this)
             finish()
         }
-
-//        firebaseRef.collection("user")
-//            .whereEqualTo("email", mEmail.text.toString())
-//            .get()
-//            .addOnSuccessListener { result ->
-//                Log.d("result", result.toString())
-//                for (document in result) {
-//                    Log.d("test", "${document.id} => ${document.data}")
-//                }
-//
-//            }
-//            .addOnFailureListener() { exception ->
-//                Log.w("err", "error getting documents.", exception)
-//            }
     }
 
-    fun md5(s: String): String? {
+    private fun isEmpty(inputText: EditText)    = TextUtils.isEmpty(inputText.text.toString())
+
+    private fun md5(s: String): String? {
+
         try {
             // Create MD5 Hash
             val digest = MessageDigest.getInstance("MD5")
