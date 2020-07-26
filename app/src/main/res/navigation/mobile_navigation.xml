@@ -19,9 +19,9 @@
 
     <fragment
         android:id="@+id/navigation_add"
-        android:name="com.siren.docuved_admin.ui.fragment.AddFragment"
+        android:name="com.siren.docuved_admin.ui.fragment.RegisterFragment"
         android:label="Tambah Siswa"
-        tools:layout="@layout/fragment_add" />
+        tools:layout="@layout/fragment_register" />
 
     <fragment
         android:id="@+id/navigation_file"
