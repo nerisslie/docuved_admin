@@ -3,12 +3,12 @@ package com.siren.docuved_admin.ui.fragment
 import android.content.ContentUris
 import android.content.Context
 import android.content.Intent
+import android.graphics.*
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.provider.DocumentsContract
 import android.provider.MediaStore
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,8 +22,8 @@ import com.siren.docuved_admin.base.BaseFragment
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.io.File
-import java.util.*
 import java.text.SimpleDateFormat
+import java.util.*
 
 
 class FileFragment : BaseFragment() {
@@ -308,6 +308,36 @@ class FileFragment : BaseFragment() {
         }
 
         return null
+    }
+
+    private fun mark(
+        src: Bitmap,
+        watermark: String?,
+        location: Point,
+        color: Color?,
+        alpha: Int,
+        size: Int,
+        underline: Boolean
+    ): Bitmap? {
+
+        val w = src.width
+        val h = src.height
+        val result = Bitmap.createBitmap(w, h, src.config)
+        val canvas = Canvas(result)
+        val paint = Paint()
+
+        canvas.drawBitmap(src, 0F, 0F, null)
+
+//        paint.color           = color
+        paint.alpha             = alpha
+        paint.textSize          = size.toFloat()
+        paint.isAntiAlias       = true
+        paint.isUnderlineText   = underline
+
+        if(watermark != null )
+            canvas.drawText(watermark, location.x.toFloat(), location.y.toFloat(), paint)
+
+        return result
     }
 
     private val Uri.isExternalStorageDocument: Boolean

@@ -29,8 +29,6 @@
             android:name="com.siren.docuved_admin.ui.activity.DashboardActivity"
             android:label="@string/title_activity_dashboard_siswa"
             android:theme="@style/AppTheme" />
-        <activity android:name="com.siren.docuved_admin.ui.activity.DaftarSiswa" />
-        <activity android:name="com.siren.docuved_admin.ui.activity.Dashboard" />
     </application>
 
 </manifest>

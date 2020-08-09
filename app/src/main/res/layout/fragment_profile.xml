@@ -1,206 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragment.ProfileFragment">
 
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <RelativeLayout
+        android:layout_height="wrap_content">
+
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="0dp"
+            android:src="@drawable/background1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/profile_container"/>
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:background="@drawable/background1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
-            <ImageView
-                android:id="@+id/image_back"
-                android:layout_width="match_parent"
-                android:layout_height="500dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="150dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="10dp"
-                android:background="#322F2F"/>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/profile_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:paddingTop="90dp"
+            android:paddingStart="30dp"
+            android:paddingEnd="30dp"
+            android:paddingBottom="20dp"
+            android:orientation="vertical"
+            android:background="@color/colorMainBackground"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
-            <ImageView
-                android:id="@+id/foto"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:background="@color/ic_person_background"
-                android:foreground="@drawable/ic_person_foreground"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="100dp"/>
-
-            <Space
-                android:id="@+id/space4"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_below="@id/foto"/>
-
-            <ImageView
-                android:id="@+id/person"
+            <TextView
+                android:id="@+id/txt_nama"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/ic_person_white_24dp"
-                android:layout_below="@id/space4"
-                android:layout_toLeftOf="@id/namalengkap"
-                android:layout_marginTop="8dp"/>
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:drawablePadding="10dp"
+                android:drawableStart="@drawable/ic_person_white_24dp"
+                android:textSize="15sp"
+                android:textColor="#fff"
+                android:text="@string/admin"/>
 
-            <EditText
-                android:id="@+id/namalengkap"
-                android:layout_marginLeft="20dp"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/space4"
-                android:hint="Nama Lengkap"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#FFFFFF"
-                android:textSize="12sp"
-                android:paddingLeft="5dp"
-                android:layout_centerHorizontal="true" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <Space
-                android:id="@+id/space5"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_below="@id/namalengkap"/>
+        <ImageView
+            android:id="@+id/foto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/ic_person_foreground"
+            android:background="@color/ic_person_background"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-            <ImageView
-                android:id="@+id/place"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ic_place_white_24dp"
-                android:layout_below="@id/space5"
-                android:layout_toLeftOf="@id/lokasi"
-                android:layout_marginTop="8dp"/>
-
-            <EditText
-                android:id="@+id/lokasi"
-                android:layout_marginLeft="20dp"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/space5"
-                android:hint="Lokasi"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#FFFFFF"
-                android:textSize="12sp"
-                android:paddingLeft="5dp"
-                android:layout_centerHorizontal="true" />
-
-            <Space
-                android:id="@+id/space6"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_below="@id/lokasi"/>
-
-            <ImageView
-                android:id="@+id/message"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ic_markunread_white_24dp"
-                android:layout_below="@id/space6"
-                android:layout_toLeftOf="@id/pesan"
-                android:layout_marginTop="8dp"/>
-
-            <EditText
-                android:id="@+id/pesan"
-                android:layout_marginLeft="20dp"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/space6"
-                android:hint="Email"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#FFFFFF"
-                android:textSize="12sp"
-                android:paddingLeft="5dp"
-                android:inputType="textEmailAddress"
-                android:layout_centerHorizontal="true" />
-
-            <Space
-                android:id="@+id/space7"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_below="@id/pesan"/>
-
-            <ImageView
-                android:id="@+id/phone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ic_phone_white_24dp"
-                android:layout_below="@id/space7"
-                android:layout_toLeftOf="@id/telpon"
-                android:layout_marginTop="8dp"/>
-
-            <EditText
-                android:id="@+id/telpon"
-                android:layout_marginLeft="20dp"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/space7"
-                android:hint="Nomor Telepon"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#FFFFFF"
-                android:textSize="12sp"
-                android:paddingLeft="5dp"
-                android:inputType="phone"
-                android:layout_centerHorizontal="true" />
-
-            <Space
-                android:id="@+id/space8"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_below="@id/telpon"/>
-
-            <ImageView
-                android:id="@+id/lock"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ic_lock_white_24dp"
-                android:layout_below="@id/space8"
-                android:layout_toLeftOf="@id/password"
-                android:layout_marginTop="8dp"/>
-
-            <EditText
-                android:id="@+id/password"
-                android:layout_marginLeft="20dp"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/space8"
-                android:hint="Password"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#FFFFFF"
-                android:textSize="12sp"
-                android:paddingLeft="5dp"
-                android:inputType="textPassword"
-                android:layout_centerHorizontal="true" />
-
-            <Button
-                android:id="@+id/button1"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:layout_below="@id/image_back"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/roundedbutton"
-                android:shadowRadius="0"
-                android:text="KELUAR"
-                android:gravity="center"
-                android:textColor="#B63532"
-                android:textSize="18sp"
-                android:textStyle="bold"/>
-
-            <Space
-                android:layout_below="@id/button1"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"/>
-
-        </RelativeLayout>
-    </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/btn_log_out"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_margin="30dp"
+            android:background="@drawable/roundedbutton"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="Log Out"
+            app:layout_constraintTop_toBottomOf="@id/profile_container"
+            style="@style/Widget.AppCompat.Button.Borderless"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

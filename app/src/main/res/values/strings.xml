@@ -9,6 +9,8 @@
     <string-array name="tahun">
         <item>Tahun Angkatan</item>
     </string-array>
+
+    <!-- Title Text -->
     <string name="title_activity_dashboard_siswa">MainActivity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>

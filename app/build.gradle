@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId "com.siren.docuved_admin"
-        minSdkVersion 21
+        minSdkVersion 23
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -53,7 +53,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.google.firebase:firebase-database-ktx:19.3.1'
-    implementation 'com.github.AnyChart:AnyChart-Android:0.0.3'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
     implementation 'de.hdodenhof:circleimageview:3.0.0'
 
     //spot dialog

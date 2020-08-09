@@ -4,55 +4,73 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import com.anychart.anychart.*
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.github.mikephil.charting.charts.LineChart
+import com.github.mikephil.charting.data.Entry
+import com.github.mikephil.charting.data.LineData
+import com.github.mikephil.charting.data.LineDataSet
+import com.google.firebase.firestore.FirebaseFirestore
 import com.siren.docuved_admin.R
-import java.util.ArrayList
+import com.siren.docuved_admin.base.BaseFragment
 
-class DashboardFragment : Fragment() {
+
+class DashboardFragment : BaseFragment() {
+
+    private lateinit var chart: LineChart
+
+    private val firebaseRef = FirebaseFirestore.getInstance()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
-        val anyChartView: AnyChartView = root.findViewById(R.id.chart_view)
+        val root    = inflater.inflate(R.layout.fragment_dashboard, container, false)
 
-        val cartesian: Cartesian = AnyChart.column()
-        val data: MutableList<DataEntry> = ArrayList<DataEntry>()
-        data.add(ValueDataEntry(0, 25))
-        data.add(ValueDataEntry(50, 50))
-        data.add(ValueDataEntry(100, 120))
-        data.add(ValueDataEntry(150, 190))
-        data.add(ValueDataEntry(200, 230))
-        data.add(ValueDataEntry(250, 300))
-        data.add(ValueDataEntry(300, 140))
-        data.add(ValueDataEntry(350, 25))
-        val column: CartesianSeriesColumn = cartesian.column(data)
+        chart       = root.findViewById(R.id.chart_view)
 
-        column.tooltip
-            .setTitleFormat("{%X")
-            .setPosition(Position.CENTER_BOTTOM)
-            .setAnchor(EnumsAnchor.CENTER_BOTTOM)
-            .setOffsetX(0.0)
-            .setOffsetY(5.0)
-            .setFormat("\${%Value}{groupsSeparator: }")
-
-        cartesian.setAnimation(true)
-        cartesian.setTitle("Data Berkas Tahun 2019/2020")
-
-        cartesian.setYScale("0.0")
-
-        cartesian.setXScale("0").labels.setFormat("\${%Value}{groupsSeparator: }")
-
-        cartesian.tooltip.setPositionMode(TooltipPositionMode.POINT)
-        cartesian.interactivity.setHoverMode(HoverMode.BY_X)
-
-        cartesian.setXAxis("0").setTitle("Product")
-        cartesian.setYAxis("0").setTitle("Revenue")
-
-        anyChartView.setChart(cartesian)
         return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val data: HashMap<Int, Int>  = HashMap()
+        val entries                     = ArrayList<Entry>()
+
+        if(client.isOnline()) {
+
+            firebaseRef.collection("archive")
+                .get()
+                .addOnSuccessListener { documents ->
+
+                    for(document in documents){
+
+                        val year = document["file"].toString().substring(4, 8).toInt()
+
+                        when(val count = data[year]){
+
+                            null    -> data[year]  = 1
+                            else    -> data[year]  = count + 1
+                        }
+                    }
+
+                    for((key, value) in data){
+
+                        entries.add(Entry(key.toFloat(), value.toFloat()))
+                    }
+
+                    val dataSet = LineDataSet(entries, "Year")
+                    val lineData = LineData(dataSet)
+                    chart.setDrawGridBackground(false)
+                    chart.data = lineData
+                    chart.invalidate()
+                }
+                .addOnFailureListener { exception ->
+
+                    showMessage(exception.toString())
+                }
+        }else
+            showMessage("No Internet Connection")
     }
 }

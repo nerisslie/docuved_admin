@@ -8,9 +8,9 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.siren.docuved_admin.R
-import com.siren.docuved_admin.base.BaseActivity
+import com.siren.docuved_admin.base.BaseMainActivity
 
-class DashboardActivity : BaseActivity() {
+class DashboardActivity : BaseMainActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
