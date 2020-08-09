@@ -21,6 +21,7 @@ import com.siren.docuved_admin.R
 import com.siren.docuved_admin.base.BaseFragment
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.io.ByteArrayOutputStream
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
@@ -197,10 +198,14 @@ class FileFragment : BaseFragment() {
 
         val file            = File(filePath.toString())
         val fileUri         = Uri.fromFile(file)
+        val bitMap          = mark(BitmapFactory.decodeFile(filePath), "DOCUVED", Point(50,100), 100, 50, false)
+        val baos = ByteArrayOutputStream()
+        bitMap?.compress(Bitmap.CompressFormat.JPEG, 100, baos)
+        val data = baos.toByteArray()
 
-        storageRef
+        var uploadTask = storageRef
             .child("images/${currentTime + "." + file.extension}")
-            .putFile(fileUri)
+            .putBytes(data)
             .addOnFailureListener {
 
                 loadingDialog.dismiss()
@@ -209,6 +214,18 @@ class FileFragment : BaseFragment() {
 
                 processUpload(userID, file)
             }
+
+//        storageRef
+//            .child("images/${currentTime + "." + file.extension}")
+//            .putFile(fileUri)
+//            .addOnFailureListener {
+//
+//                loadingDialog.dismiss()
+//                showMessage(it.toString())
+//            }.addOnSuccessListener {
+//
+//                processUpload(userID, file)
+//            }
     }
 
     private fun processUpload(userID: String, file: File){
@@ -314,7 +331,6 @@ class FileFragment : BaseFragment() {
         src: Bitmap,
         watermark: String?,
         location: Point,
-        color: Color?,
         alpha: Int,
         size: Int,
         underline: Boolean
@@ -328,7 +344,7 @@ class FileFragment : BaseFragment() {
 
         canvas.drawBitmap(src, 0F, 0F, null)
 
-//        paint.color           = color
+        paint.color             = Color.BLACK
         paint.alpha             = alpha
         paint.textSize          = size.toFloat()
         paint.isAntiAlias       = true

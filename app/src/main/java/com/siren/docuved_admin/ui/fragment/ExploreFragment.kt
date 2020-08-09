@@ -115,7 +115,6 @@ class ExploreFragment : BaseFragment() {
 
         firebaseRef.collection("archive")
             .whereEqualTo("user_id", id)
-            .limit(1)
             .get()
             .addOnSuccessListener { documents ->
 
