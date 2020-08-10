@@ -198,7 +198,9 @@ class FileFragment : BaseFragment() {
 
         val file            = File(filePath.toString())
         val fileUri         = Uri.fromFile(file)
-        val bitMap          = mark(BitmapFactory.decodeFile(filePath), "DOCUVED", Point(50,100), 100, 50, false)
+        val orBitMap        = BitmapFactory.decodeFile(filePath)
+        val size            = ((orBitMap.width + orBitMap.height) / 2) / 5
+        val bitMap          = mark(orBitMap, "DOCUVED", Point(0,(orBitMap.height*0.5).toInt()), 100, size, false)
         val baos = ByteArrayOutputStream()
         bitMap?.compress(Bitmap.CompressFormat.JPEG, 100, baos)
         val data = baos.toByteArray()
